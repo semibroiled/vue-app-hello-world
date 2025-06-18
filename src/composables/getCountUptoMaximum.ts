@@ -1,6 +1,6 @@
 import * as vue from "vue";
 
-const getCountUptoMaximum = (max: number) => {
+export const getCountUptoMaximum = (max: number) => {
   return vue.customRef((track, trigger) => {
     let init = 0;
 
@@ -19,5 +19,3 @@ const getCountUptoMaximum = (max: number) => {
     };
   });
 };
-
-export default getCountUptoMaximum;

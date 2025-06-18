@@ -1,26 +1,34 @@
 <template>
   <h2>Date {{ date }} formatted to {{ date_MMDDYYY }}</h2>
   <br />
+  <br />
   <h3>This is my counter that counts the clicks you clack</h3>
   <button @click="stopTimer()">Click here to stop count!</button>
   <button @click="decrementCounter()">Decrement</button>
   <button @click="incrementCounter()">Increment</button>
   <button @click="resetCounter()">Reset</button>
   <br />
+  <br />
   <button @click="startTimer()">Start Timer</button>
   <h2>This is my reactive variable : {{ myMaximumReactiveVariable }}</h2>
   <h2>This is my computed variable : {{ myComputedVariable }}</h2>
+  <br />
+  <br />
+  Variable name: <input type="text" v-model="name" /> Variable name {{ name }}
 </template>
 
 <script lang="ts" setup>
 import * as vue from "vue";
-import getCountUptoMaximum from "../composables/getCountUptoMaximum";
-import useDateFromat from "../composables/useDateFormat";
+import { getCountUptoMaximum } from "../composables/getCountUptoMaximum";
+import { useDateFormat } from "../composables/useDateFormat";
+import { capitalizeInput } from "../composables/capitalizeInput";
 console.log("Component loaded in memory");
 
 const date = new Date();
 
-const date_MMDDYYY = useDateFromat(date, "MM-DD-YYYY");
+const name = capitalizeInput("Amitav");
+
+const date_MMDDYYY = useDateFormat(date, "MM-DD-YYYY");
 
 const myMaximumReactiveVariable = getCountUptoMaximum(10);
 // const myCounter = vue.customRef((track, trigger) => {

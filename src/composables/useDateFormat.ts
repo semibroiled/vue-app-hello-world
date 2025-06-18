@@ -25,7 +25,7 @@ const formatDate = (date: Date, format: string): string => {
   }
 };
 
-const useDateFormat = (date: Date, format: string) => {
+export const useDateFormat = (date: Date, format: string) => {
   return customRef((track, trigger) => {
     let value: string = formatDate(date, format);
 
@@ -41,5 +41,3 @@ const useDateFormat = (date: Date, format: string) => {
     };
   });
 };
-
-export default useDateFormat;
