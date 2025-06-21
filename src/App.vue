@@ -1,10 +1,31 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
-  <ClickCounter />
+  <MyForm />
 </template>
 
 <script setup lang="ts">
-import ClickCounter from "./components/ClickCounter.vue";
+import MyForm from "./components/MyForm.vue";
+// type Limit = {
+//   init?: number;
+//   end?: number;
+// };
+
+// const limits: Limit[] = [
+//   { init: 5, end: 10 },
+//   { init: 1, end: 5 },
+//   { init: 10 },
+//   { end: 10 },
+// ];
+// const count = vue.ref(0);
+// const doubleCount = vue.computed(() => {
+//   return count.value * 2;
+// });
+
+// const incrementCounter = () => {
+//   console.log("before increment value");
+//   count.value++;
+//   console.log("after increment value");
+// };
 </script>
 <style>
 #app {
