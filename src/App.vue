@@ -1,11 +1,17 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
   <br />
-  <ParentProvideNode />
+  <input type="text" v-model="name" />
+  <MyCountries :name="name" />
 </template>
 
 <script setup lang="ts">
-import ParentProvideNode from "./components/Chapter_3/ParentProvideNode.vue";
+import MyCountries from "./components/Chapter_4/MyCountries.vue";
+
+import { ref } from "vue";
+
+const name = ref("");
+
 //   init?: number;
 //   end?: number;
 // };
